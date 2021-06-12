@@ -12,3 +12,14 @@ async function sha256(message) {
     const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     return hashHex;
 }
+
+function randStr(n)
+{
+    let charset = 'abcdefghijklmnopqrstuvwxyz0123456789'
+    let r = ''    
+    while(n--)
+    {
+        r += charset[Math.round(100*Math.random())%charset.length]    
+    }
+    return r
+}
